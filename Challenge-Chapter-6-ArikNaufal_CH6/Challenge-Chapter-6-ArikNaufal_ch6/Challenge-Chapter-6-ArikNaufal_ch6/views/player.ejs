@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title><%= title %></title>
+</head>
+<style>
+  .black{
+    background-color: rgb(46, 46, 46);
+  }
+  .gray{
+    background-color: rgb(79, 78, 78);
+  }
+  .card{
+    margin-top: 50px;
+  }
+  .card-block{
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid red; */
+  }
+  ul{
+    margin-bottom: 0;
+  }
+  .fix{
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  .span{
+    position: absolute;
+    top: 0;
+    left: 10px; 
+  }
+</style>
+  <body>  
+    <div class="container">
+      <h2>PLAYER DETAIL</h2>       
+        <div class="card black" style="width: 20rem; padding: 20px 0;">
+          <a class="span" href="/list">&laquo; back</a>
+          <div class="fix">
+            <a href="/list/<%= list.name %>/edit">edit</a>
+          </div>
+          <div class="inner black" style="width: 100%">
+            <div class="card-block mx-auto black">
+              <h3 class="text-center text-white"><%= list.name %></h3>
+              <p class="text-center text-white" style="margin-bottom: 0; padding-bottom: 16px;"><%= list.email %></p>
+             </div>
+             <div class="card-block mx-auto gray">
+               <ul class="text-center d-flex list-unstyled justify-content-evenly">
+                <li><p class="text-center text-white">score_1: <br> <%= list.score_1 %> </p></li>
+                <li><p class="text-center text-white">score_2: <br> <%= list.score_2 %> </p></li>
+                <li><p class="text-center text-white">score_3: <br> <%= list.score_3 %></p></li>
+               </ul>
+              <h3 class="text-center">
+                <a href="/guild/member/<%=list.guild.name%> " class="text-white text-decoration-none">
+                  <% const value = list.guild.name ? list.guild.name : 'non affiliation' %> 
+                  <%= value %> 
+                </a>
+              </h3>
+             </div>
+          </div>
+        </div>     
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
+

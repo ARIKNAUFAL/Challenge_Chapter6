@@ -1,0 +1,17 @@
+npm init >> 
+npm install sequelize >> 
+sequelize init >> 
+setting config >> 
+npm install -g pg --save >> 
+sequelize db:create >> 
+
+sequelize model:generate --name table_name --attributes column1:string,column2:integer >> 
+setting migration  >>
+sequelize db:migrate (migrasi table ke postgres)
+
+sequelize migration:create --name add-area_id-in-table_name (add column)
+
+sequelize --help (check sequelize sudah terinstall scr global)
+
+sequelize migrate:generate
+
